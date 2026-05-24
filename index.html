@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <!-- ============================================================================
+         META INFORMAÇÕES - Configurações básicas da página
+         ============================================================================ -->
+    <meta charset="UTF-8">                    <!-- Define codificação de caracteres -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  <!-- Responsividade mobile -->
+    <title>Guia de Pesquisa - Acesso ao Conhecimento</title>              <!-- Título da página (aba do navegador) -->
+    <link rel="stylesheet" href="styles.css">                             <!-- Carrega estilos CSS -->
+</head>
+<body>
+    <!-- ============================================================================
+         HEADER FIXA (Barra Superior)
+         ============================================================================
+         Barra de navegação fixada no topo. Contém:
+         - Logo/nome do site à esquerda
+         - Menu de navegação com links para seções (desktop)
+         - Botão hamburger para mobile que abre/fecha o menu
+    -->
+    <header class="header">
+        <div class="container header-content">
+            <!-- Logo do site -->
+            <div class="header-logo">
+                <h2 class="logo-text">Guia de Pesquisa</h2>
+            </div>
+            
+            <!-- Botão Menu Hamburger (visível apenas em mobile) -->
+            <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">
+                <span></span>  <!-- Linha 1 do hamburger -->
+                <span></span>  <!-- Linha 2 do hamburger -->
+                <span></span>  <!-- Linha 3 do hamburger -->
+            </button>
+            
+            <!-- Menu de Navegação Principal -->
+            <nav class="header-nav" id="headerNav">
+                <a href="#inicio" class="nav-link">Início</a>              <!-- Link para seção hero -->
+                <a href="#sobre" class="nav-link">Sobre</a>               <!-- Link para seção sobre -->
+                <a href="#conteudo" class="nav-link">Conteúdo</a>          <!-- Link para seção conteúdo -->
+                <a href="#feedbacks" class="nav-link">Feedbacks</a>        <!-- Link para seção feedbacks -->
+                <a href="#contato" class="nav-link">Contato</a>            <!-- Link para seção contato -->
+                <a href="#guia" class="btn btn-primary btn-sm">Acessar Guia</a>  <!-- Botão CTA -->
+            </nav>
+        </div>
+    </header>
+
+    <!-- ============================================================================
+         SEÇÃO HERO (Primeira impressão)
+         ============================================================================
+         Seção de impacto visual com:
+         - Título principal
+         - Descrição breve
+         - Chamada para ação (CTA button)
+         - Imagem do guia
+    -->
+    <section class="hero" id="inicio">
+        <div class="container">
+            <!-- Coluna Esquerda: Conteúdo de texto -->
+            <div class="hero-content">
+                <h1 class="hero-title">Desbrave o Mundo da Pesquisa</h1>
+                <p class="hero-subtitle">Um guia completo para organizar, estruturar e conduzir sua pesquisa com segurança e eficiência</p>
+                <a href="#" class="btn btn-primary btn-lg">Acessar Guia</a>
+            </div>
+            
+            <!-- Coluna Direita: Imagem -->
+            <div class="hero-image">
+                <img src="assets/guia-cover.jpg" alt="Capa do Guia de Pesquisa" class="guide-cover">
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================================
+         SEÇÃO SOBRE O PROJETO
+         ============================================================================
+         Apresenta a missão do projeto em:
+         - Texto explicativo à esquerda
+         - 4 pilares (cards) à direita: Propósito, Acessibilidade, Organização, Apoio
+    -->
+    <section class="about-project" id="sobre">
+        <div class="container">
+            <div class="about-wrapper">
+                <!-- Coluna Esquerda: Descrição e Contexto -->
+                <div class="about-text">
+                    <h2>Sobre o Projeto</h2>
+                    <p class="about-paragraph">
+                        Esta iniciativa nasceu da convicção de que o conhecimento deve ser acessível a todos. Nosso objetivo é apoiar estudantes, pesquisadores e interessados em qualquer área do saber.
+                    </p>
+                    <p class="about-paragraph">
+                        Acreditamos que uma pesquisa bem conduzida começa com uma boa preparação. Por isso, desenvolvemos este guia com linguagem clara, exemplos práticos e uma estrutura que facilita a compreensão—sem perder o rigor acadêmico e científico necessário.
+                    </p>
+                    <p class="about-paragraph">
+                        O material reúne boas práticas consolidadas, orientações essenciais e informações úteis para transformar uma simples ideia em um trabalho de pesquisa bem fundamentado e profissional.
+                    </p>
+                </div>
+
+                <!-- Coluna Direita: 4 Pilares do Projeto (Cards coloridos) -->
+                <div class="about-highlight">
+                    <!-- Pilar 1: Propósito (Rosa) -->
+                    <div class="pillar-card pillar-1">
+                        <div class="pillar-icon">1</div>
+                        <div class="pillar-title">Propósito</div>
+                        <p class="pillar-description">
+                            Transformar a forma como pessoas conduzem pesquisas através de orientações práticas e acessíveis.
+                        </p>
+                    </div>
+
+                    <!-- Pilar 2: Acessibilidade (Azul) -->
+                    <div class="pillar-card pillar-2">
+                        <div class="pillar-icon">2</div>
+                        <div class="pillar-title">Acessibilidade</div>
+                        <p class="pillar-description">
+                            Conhecimento claro e objetivo para qualquer nível de experiência em pesquisa.
+                        </p>
+                    </div>
+
+                    <!-- Pilar 3: Organização (Verde) -->
+                    <div class="pillar-card pillar-3">
+                        <div class="pillar-icon">3</div>
+                        <div class="pillar-title">Organização</div>
+                        <p class="pillar-description">
+                            Estrutura lógica e bem definida que guia cada etapa do processo de pesquisa.
+                        </p>
+                    </div>
+
+                    <!-- Pilar 4: Apoio (Coral) -->
+                    <div class="pillar-card pillar-4">
+                        <div class="pillar-icon">4</div>
+                        <div class="pillar-title">Apoio</div>
+                        <p class="pillar-description">
+                            Suporte contínuo para iniciantes e pesquisadores que desejam qualificar seu trabalho.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================================
+         SEÇÃO CONTEÚDO DO GUIA
+         ============================================================================
+         Exibe 6 cards numerados explicando os tópicos principais do guia:
+         1. Definição do Tema
+         2. Organização de Ideias
+         3. Levantamento de Fontes
+         4. Estruturação do Trabalho
+         5. Planejamento das Etapas
+         6. Boas Práticas de Escrita
+    -->
+    <section class="guide-content" id="conteudo">
+        <div class="container">
+            <h2 class="section-title">O Que Você Encontrará</h2>
+            <p class="section-subtitle">Conteúdos práticos e organizados para orientar sua pesquisa em cada etapa.</p>
+            
+            <!-- Grid com 6 cards informativos -->
+            <div class="cards-grid">
+                <!-- Card 1: Definição do Tema -->
+                <div class="card">
+                    <div class="card-number" data-number="1"></div>
+                    <h3 class="card-title">Definição do Tema</h3>
+                    <p class="card-description">
+                        Aprenda como escolher um tema adequado, delimitá-lo e formular perguntas de pesquisa que guiarão seu trabalho.
+                    </p>
+                </div>
+
+                <!-- Card 2: Organização de Ideias -->
+                <div class="card">
+                    <div class="card-number" data-number="2"></div>
+                    <h3 class="card-title">Organização de Ideias</h3>
+                    <p class="card-description">
+                        Técnicas práticas para mapear, organizar e conectar suas ideias, criando uma base sólida para a pesquisa.
+                    </p>
+                </div>
+
+                <!-- Card 3: Levantamento de Fontes -->
+                <div class="card">
+                    <div class="card-number" data-number="3"></div>
+                    <h3 class="card-title">Levantamento de Fontes</h3>
+                    <p class="card-description">
+                        Guia completo para encontrar, selecionar e avaliar as melhores fontes de informação para seu tema.
+                    </p>
+                </div>
+
+                <!-- Card 4: Estruturação do Trabalho -->
+                <div class="card">
+                    <div class="card-number" data-number="4"></div>
+                    <h3 class="card-title">Estruturação do Trabalho</h3>
+                    <p class="card-description">
+                        Entenda como organizar seu trabalho de forma lógica e profissional, respeitando as normas acadêmicas.
+                    </p>
+                </div>
+
+                <!-- Card 5: Planejamento das Etapas -->
+                <div class="card">
+                    <div class="card-number" data-number="5"></div>
+                    <h3 class="card-title">Planejamento das Etapas</h3>
+                    <p class="card-description">
+                        Ferramentas e metodologias para estabelecer cronogramas e gerenciar o tempo de sua pesquisa de forma eficiente.
+                    </p>
+                </div>
+
+                <!-- Card 6: Boas Práticas de Escrita -->
+                <div class="card">
+                    <div class="card-number" data-number="6"></div>
+                    <h3 class="card-title">Boas Práticas de Escrita</h3>
+                    <p class="card-description">
+                        Dicas essenciais para escrever, revisar e apresentar seu trabalho com qualidade e rigor científico.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================================
+         SEÇÃO FEEDBACKS (Carrossel com Depoimentos)
+         ============================================================================
+         Exibe histórias de sucesso de usuários em um carrossel deslizável:
+         - Navegação com botões anterior/próximo
+         - Suporte a toque em mobile e drag com mouse
+         - 9 feedback cards no total
+    -->
+    <section class="feedbacks" id="feedbacks">
+        <div class="container">
+            <h2 class="section-title">Histórias de Sucesso</h2>
+            <p class="section-description">
+                Conheça quem já transformou sua pesquisa com o nosso guia.
+            </p>
+        </div>
+
+        <!-- Wrapper do Carrossel (para controlar padding) -->
+        <div class="feedbacks-carousel-wrapper">
+            <!-- Botão Anterior (Seta para esquerda) -->
+            <button class="carousel-btn carousel-btn-prev" id="prevBtn" aria-label="Feedback anterior">
+                ‹
+            </button>
+
+            <!-- Container do Carrossel (elemento com scroll) -->
+            <div class="feedbacks-carousel" id="feedbacksCarousel">
+                <!-- Feedback 1 -->
+                <div class="feedback-card">
+                    <div class="feedback-header">
+                        <h4 class="feedback-name">Maria Santos</h4>
+                        <p class="feedback-role">Estudante de Jornalismo</p>
+                    </div>
+                    <p class="feedback-text">
+                        "Finalmente entendi como estruturar minha pesquisa! O guia é claro e objetivo."
+                    </p>
+                </div>
+
+                <!-- Feedback 2 -->
+                <div class="feedback-card">
+                    <div class="feedback-header">
+                        <h4 class="feedback-name">Dr. Carlos Oliveira</h4>
+                        <p class="feedback-role">Professor Orientador</p>
+                    </div>
+                    <p class="feedback-text">
+                        "Excelente recurso para indicar aos alunos. Material bem organizado e prático."
+                    </p>
+                </div>
+
+                <!-- Feedback 3 -->
+                <div class="feedback-card">
+                    <div class="feedback-header">
+                        <h4 class="feedback-name">Ana Paula Silva</h4>
+                        <p class="feedback-role">Pesquisadora Iniciante</p>
+                    </div>
+                    <p class="feedback-text">
+                        "Me sentia completamente perdida, mas o guia iluminou meu caminho. Muito útil!"
+                    </p>
+                </div>
+
+                <!-- Feedback 4 -->
+                <div class="feedback-card">
+                    <div class="feedback-header">
+                        <h4 class="feedback-name">Lucas Ferreira</h4>
+                        <p class="feedback-role">Estudante de História</p>
+                    </div>
+                    <p class="feedback-text">
+                        "Organizei minha pesquisa em metade do tempo. O passo a passo é impecável."
+                    </p>
+                </div>
+
+                <!-- Feedback 5 -->
+                <div class="feedback-card">
+                    <div class="feedback-header">
+                        <h4 class="feedback-name">Fernanda Costa</h4>
+                        <p class="feedback-role">Mestranda em Educação</p>
+                    </div>
+                    <p class="feedback-text">
+                        "Guia fundamental para qualquer pesquisa. Claro, bem estruturado e acessível."
+                    </p>
+                </div>
+
+                <!-- Feedback 6 -->
+                <div class="feedback-card">
+                    <div class="feedback-header">
+                        <h4 class="feedback-name">Roberto Alves</h4>
+                        <p class="feedback-role">Professor Pesquisador</p>
+                    </div>
+                    <p class="feedback-text">
+                        "Recomendo para todos os meus orientandos. Material de referência excepcional."
+                    </p>
+                </div>
+
+                <!-- Feedback 7 -->
+                <div class="feedback-card">
+                    <div class="feedback-header">
+                        <h4 class="feedback-name">Juliana Rocha</h4>
+                        <p class="feedback-role">Estudante de Psicologia</p>
+                    </div>
+                    <p class="feedback-text">
+                        "Aprendi como identificar boas fontes e evitar armadilhas na pesquisa. Excelente!"
+                    </p>
+                </div>
+
+                <!-- Feedback 8 -->
+                <div class="feedback-card">
+                    <div class="feedback-header">
+                        <h4 class="feedback-name">Paulo Mendes</h4>
+                        <p class="feedback-role">Pesquisador Independente</p>
+                    </div>
+                    <p class="feedback-text">
+                        "Metodologia clara e prática. Transformou minha forma de conduzir pesquisas."
+                    </p>
+                </div>
+
+                <!-- Feedback 9 -->
+                <div class="feedback-card">
+                    <div class="feedback-header">
+                        <h4 class="feedback-name">Camila Neves</h4>
+                        <p class="feedback-role">Estudante de Comunicação</p>
+                    </div>
+                    <p class="feedback-text">
+                        "O melhor guia de pesquisa que já vi. Prático, completo e bem explicado."
+                    </p>
+                </div>
+            </div>
+
+            <!-- Botão Próximo (Seta para direita) -->
+            <button class="carousel-btn carousel-btn-next" id="nextBtn" aria-label="Próximo feedback">
+                ›
+            </button>
+        </div>
+    </section>
+
+    <!-- ============================================================================
+         SEÇÃO CONTATO
+         ============================================================================
+         Exibe informações de contato com:
+         - Descrição e chamada para ação
+         - 4 cards de contato: Email, WhatsApp, Instagram, LinkedIn
+    -->
+    <section class="contact" id="contato">
+        <div class="container">
+            <div class="contact-wrapper">
+                <!-- Coluna Esquerda: Descrição -->
+                <div class="contact-content">
+                    <h2 class="section-title">Entre em Contato</h2>
+                    <p class="contact-description">
+                        Tem dúvidas sobre o guia? Quer saber mais sobre o projeto ou compartilhar feedback? 
+                        Entre em contato conosco! Estamos aqui para ajudar e ouvir suas sugestões.
+                    </p>
+                    <a href="https://wa.me/5500000000000?text=Olá!%20Gostaria%20de%20mais%20informações%20sobre%20o%20Guia%20de%20Pesquisa." class="btn btn-contact" target="_blank">Enviar Mensagem</a>
+                </div>
+
+                <!-- Coluna Direita: 4 Cards de Contato -->
+                <div class="contact-methods">
+                    <!-- Card: Email -->
+                    <div class="contact-card contact-card-email">
+                        <span class="contact-card-icon">✉</span>
+                        <h3 class="contact-card-title">E-mail</h3>
+                        <p class="contact-card-text">contato@guiadepesquisa.com</p>
+                    </div>
+
+                    <!-- Card: WhatsApp -->
+                    <div class="contact-card contact-card-whatsapp">
+                        <span class="contact-card-icon">☎</span>
+                        <h3 class="contact-card-title">WhatsApp</h3>
+                        <p class="contact-card-text">(11) 99999-9999</p>
+                    </div>
+
+                    <!-- Card: Instagram -->
+                    <div class="contact-card contact-card-instagram">
+                        <span class="contact-card-icon">◉</span>
+                        <h3 class="contact-card-title">Instagram</h3>
+                        <p class="contact-card-text">@guiadepesquisa</p>
+                    </div>
+
+                    <!-- Card: LinkedIn -->
+                    <div class="contact-card contact-card-linkedin">
+                        <span class="contact-card-icon">◈</span>
+                        <h3 class="contact-card-title">LinkedIn</h3>
+                        <p class="contact-card-text">/guia-de-pesquisa</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================================
+         SEÇÃO CTA FINAL (Call To Action)
+         ============================================================================
+         Última seção com chamada para ação para incentivar o usuário a acessar o guia.
+         Design minimalista com fundo rosa e botão destaque.
+    -->
+    <section class="final-cta" id="guia">
+        <div class="container">
+            <h2 class="cta-title">Pronto para Começar?</h2>
+            <p class="cta-description">
+                Acesse agora o Guia de Pesquisa e transforme sua forma de pesquisar. Tudo que você precisa está aqui.
+            </p>
+            <a href="#" class="btn btn-primary btn-lg">Acessar Guia</a>
+        </div>
+    </section>
+
+    <!-- ============================================================================
+         RODAPÉ (Footer)
+         ============================================================================
+         Barra final com copyright e informações legais.
+    -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Guia de Pesquisa. Desenvolvido com dedicação ao conhecimento.</p>
+        </div>
+    </footer>
+
+    <!-- ============================================================================
+         SCRIPT DE INTERATIVIDADE
+         ============================================================================
+         Carrega o arquivo JavaScript com toda a funcionalidade da página:
+         - Carousel de feedbacks
+         - Menu mobile
+         - Animações de scroll reveal
+         - Efeitos de scroll do header
+    -->
+    <script src="script.js"></script>
+</body>
+</html>
