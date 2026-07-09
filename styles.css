@@ -2086,46 +2086,37 @@ section {
     }
 }
 
-/* Correção final da diagonal verde -> azul no mobile */
+/* Transição limpa verde -> azul no mobile */
 @media (max-width: 480px) {
     .guide-content {
+        background-color: var(--verde-claro) !important;
         clip-path: none !important;
         margin-top: -2rem !important;
-        padding-bottom: 8rem !important;
+        padding-bottom: 4rem !important;
         position: relative !important;
         overflow: hidden !important;
     }
 
-    .guide-content .container {
-        position: relative !important;
-        z-index: 2 !important;
-    }
-
-    .guide-content::before {
-        display: none !important;
-    }
-
     .guide-content::after {
-        content: "" !important;
-        display: block !important;
-        position: absolute !important;
-        left: -20% !important;
-        right: -20% !important;
-        bottom: -70px !important;
-        width: auto !important;
-        height: 170px !important;
-        background-color: var(--azul-petroleo) !important;
-        transform: rotate(-6deg) !important;
-        transform-origin: left top !important;
-        border-radius: 0 !important;
-        opacity: 1 !important;
-        z-index: 1 !important;
+        display: none !important;
     }
 
     .donations {
         clip-path: none !important;
-        margin-top: -2px !important;
-        padding-top: 5rem !important;
+        margin-top: 0 !important;
+        padding-top: 7rem !important;
+        position: relative !important;
+        overflow: hidden !important;
+
+        background:
+            linear-gradient(
+                to bottom right,
+                var(--verde-claro) 0%,
+                var(--verde-claro) 49%,
+                var(--azul-petroleo) 50%,
+                var(--azul-petroleo) 100%
+            ) top / 100% 90px no-repeat,
+            var(--azul-petroleo) !important;
     }
 
     .donations::before,
