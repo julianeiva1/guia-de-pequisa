@@ -6,8 +6,15 @@
          ============================================================================ -->
     <meta charset="UTF-8">                    <!-- Define codificação de caracteres -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">  <!-- Responsividade mobile -->
-    <title>Guia de Pesquisa</title>              <!-- Título da página (aba do navegador) -->
-    <link rel="stylesheet" href="styles.css">                             <!-- Carrega estilos CSS -->
+        <title>Guia de Pesquisa</title>              <!-- Título da página (aba do navegador) -->
+
+        <link 
+            rel="stylesheet" 
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        >
+
+        <link rel="stylesheet" href="styles.css">                             <!-- Carrega estilos CSS -->
+        <link rel="icon" type="image/png" sizes="32x32" href="assets/logo-quebra-cabeca.png">
 </head>
 <body>
     <!-- ============================================================================
@@ -417,7 +424,12 @@
                     Use um dos canais abaixo para falar com a ONG Quebra Cabeça.
                 </p>
 
-                <a href="mailto:quebracabeca.ong@gmail.com" class="btn btn-contact">
+                <a 
+                    href="https://mail.google.com/mail/?view=cm&fs=1&to=quebracabeca.ong@gmail.com" 
+                    class="btn btn-contact"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
                     Enviar e-mail para a ONG
                 </a>
             </div>
@@ -432,7 +444,9 @@
                     rel="noopener noreferrer"
                     aria-label="Acessar Instagram da ONG Quebra Cabeça"
                 >
-                    <span class="contact-card-icon">◉</span>
+                    <span class="contact-card-icon">
+                        <i class="fa-brands fa-instagram"></i>
+                    </span>
 
                     <div class="contact-card-content">
                         <h3 class="contact-card-title">Instagram</h3>
@@ -445,9 +459,11 @@
 
                 <!-- Card: E-mail pessoal -->
                 <a 
-                    href="mailto:ccarrareto@gmail.com" 
+                    href="https://mail.google.com/mail/?view=cm&fs=1&to=ccarrareto@gmail.com" 
                     class="contact-card contact-card-personal-email"
                     aria-label="Enviar e-mail pessoal"
+                    target="_blank"
+                    rel="noopener noreferrer"
                 >
                     <span class="contact-card-icon">✉</span>
 
@@ -462,9 +478,11 @@
 
                 <!-- Card: E-mail da ONG -->
                 <a 
-                    href="mailto:quebracabeca.ong@gmail.com" 
+                    href="https://mail.google.com/mail/?view=cm&fs=1&to=quebracabeca.ong@gmail.com" 
                     class="contact-card contact-card-ong-email"
                     aria-label="Enviar e-mail para a ONG Quebra Cabeça"
+                    target="_blank"
+                    rel="noopener noreferrer"
                 >
                     <span class="contact-card-icon">✉</span>
 
