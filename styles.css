@@ -50,6 +50,61 @@
     --font-size-lg: 1.125rem;     /* Tamanho grande */
 }
 
+/* Scroll-to-top button */
+.scroll-top-btn {
+    position: fixed;
+    right: 1.5rem;
+    bottom: 1.5rem;
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+    border: 3px solid var(--roxo-escuro);
+    background-color: var(--rosa-forte);
+    color: white;
+    font-size: 1.45rem;
+    cursor: pointer;
+    box-shadow: 0 6px 0 rgba(64, 27, 71, 0.35);
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(12px);
+    transition: opacity 0.2s ease, visibility 0.2s ease, transform 0.2s ease, background-color 0.2s ease;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.scroll-top-btn i {
+    display: block;
+    line-height: 1;
+}
+
+.scroll-top-btn.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.scroll-top-btn:hover {
+    background-color: var(--azul-petroleo);
+}
+
+.scroll-top-btn:active {
+    transform: translateY(4px);
+    box-shadow: 0 2px 0 rgba(64, 27, 71, 0.35);
+}
+
+@media (max-width: 480px) {
+    .scroll-top-btn {
+        right: 1rem;
+        bottom: 1rem;
+        width: 48px;
+        height: 48px;
+        font-size: 1.7rem;
+    }
+}
+
 /* ============================================================================
    2. RESET E ESTILOS BASE
    ============================================================================
@@ -1464,6 +1519,42 @@ section {
     }
 }
 
+@media (max-width: 480px) {
+    .guide-content {
+        clip-path: none;
+        margin-top: -2rem;
+        padding-bottom: 7rem;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .guide-content .container {
+        position: relative;
+        z-index: 1;
+    }
+
+    .guide-content::after {
+        content: "";
+        position: absolute;
+        left: -10%;
+        right: -10%;
+        bottom: -55px;
+        height: 130px;
+        background-color: var(--azul-petroleo);
+        transform: skewY(-8deg);
+        transform-origin: right top;
+        border-radius: 0;
+        opacity: 1;
+        z-index: 0;
+    }
+
+    .donations {
+        clip-path: none;
+        margin-top: -1px;
+        padding-top: 4rem;
+    }
+}
+
 /* ============================================================================
    11. FINAL CTA SECTION
    ============================================================================ */
@@ -1758,12 +1849,13 @@ section {
     }
 
     .btn-lg {
-        padding: 1.125rem 2.25rem;
+        padding: 1rem 2rem;
         font-size: var(--font-size-base);
-        display: block;
-        width: 100%;
+        display: inline-block;
+        width: auto;
+        min-width: 220px;
+        max-width: 100%;
         text-align: center;
-        min-width: auto;
     }
 
     /* Hero */
@@ -1773,7 +1865,22 @@ section {
 
     .hero .container {
         grid-template-columns: 1fr;
-        padding: 3rem 0;
+        padding: 3rem 1.5rem;
+    }
+
+    /* Mobile: gentler diagonals to avoid aggressive clipping */
+    .hero {
+        clip-path: polygon(0 0, 100% 0, 100% 94%, 0 100%);
+    }
+
+    .about-project,
+    .guide-content,
+    .donations,
+    .contact,
+    .final-cta,
+    .footer {
+        clip-path: polygon(0 2%, 100% 0, 100% 100%, 0 100%);
+        margin-top: -2rem;
     }
 
     .hero-content h1 {
@@ -1964,5 +2071,65 @@ section {
 
     .cta-description {
         font-size: var(--font-size-base);
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding-top: 68px;
+    }
+
+    .hero {
+        margin-top: 0;
+        padding-top: 3.5rem;
+        clip-path: polygon(0 0, 100% 0, 100% 94%, 0 100%);
+    }
+}
+
+/* Correção final da diagonal verde -> azul no mobile */
+@media (max-width: 480px) {
+    .guide-content {
+        clip-path: none !important;
+        margin-top: -2rem !important;
+        padding-bottom: 8rem !important;
+        position: relative !important;
+        overflow: hidden !important;
+    }
+
+    .guide-content .container {
+        position: relative !important;
+        z-index: 2 !important;
+    }
+
+    .guide-content::before {
+        display: none !important;
+    }
+
+    .guide-content::after {
+        content: "" !important;
+        display: block !important;
+        position: absolute !important;
+        left: -20% !important;
+        right: -20% !important;
+        bottom: -70px !important;
+        width: auto !important;
+        height: 170px !important;
+        background-color: var(--azul-petroleo) !important;
+        transform: rotate(-6deg) !important;
+        transform-origin: left top !important;
+        border-radius: 0 !important;
+        opacity: 1 !important;
+        z-index: 1 !important;
+    }
+
+    .donations {
+        clip-path: none !important;
+        margin-top: -2px !important;
+        padding-top: 5rem !important;
+    }
+
+    .donations::before,
+    .donations::after {
+        display: none !important;
     }
 }
