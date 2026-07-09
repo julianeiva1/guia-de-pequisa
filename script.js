@@ -256,15 +256,18 @@ const ScrollRevealManager = (() => {
     document.addEventListener('DOMContentLoaded', () => {
         // Lista de seletores CSS dos elementos que devem ter animação de revelação
         const selectors = [
-            '.hero-content',     // Título e descrição do hero
-            '.hero-image',       // Imagem do hero
-            '.about-text',       // Texto da seção sobre
+            '.hero-content',      // Título e descrição do hero
+            '.hero-image',        // Imagem do hero
+            '.about-text',        // Texto da seção sobre
             '.pillar-card',      // Pilares de caracterização do projeto
-            '.card',             // Cards da seção de conteúdo
-            '.contact-content',  // Conteúdo da seção de contato
-            '.contact-card',     // Cards de contato
-            '.cta-title',        // Título do call-to-action
-            '.cta-description'   // Descrição do call-to-action
+            '.card',              // Cards da seção de conteúdo
+            '.donations-header',  // Cabeçalho da seção de doações
+            '.donation-card',     // Cards de doações
+            '.donations-footer',  // Rodapé da seção de doações
+            '.contact-content',   // Conteúdo da seção de contato
+            '.contact-card',      // Cards de contato
+            '.cta-title',         // Título do call-to-action
+            '.cta-description'    // Descrição do call-to-action
         ];
 
         // Seleciona todos os elementos que devem ser animados
@@ -333,3 +336,21 @@ const HeaderScrollManager = (() => {
         }
     });
 })();
+
+/**
+ * ================================================================================
+ * COPIAR CHAVE PIX
+ * ================================================================================
+ * Copia a chave Pix da ONG Quebra Cabeça para a área de transferência.
+ */
+function copyPixKey() {
+    const pixKey = 'quebracabeca.ong@gmail.com';
+
+    navigator.clipboard.writeText(pixKey)
+        .then(() => {
+            alert('Chave Pix copiada: ' + pixKey);
+        })
+        .catch(() => {
+            alert('Não foi possível copiar automaticamente. Chave Pix: ' + pixKey);
+        });
+}

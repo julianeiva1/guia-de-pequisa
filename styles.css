@@ -240,7 +240,7 @@ section {
     right: 0;
     background-color: var(--roxo-escuro);
     border-bottom: 4px solid var(--rosa-forte);
-    padding: 1.25rem 0;    /* Padding padrão */
+    padding: 0.95rem 0;    /* Padding padrão */
     z-index: 1000;         /* Fica acima de todo conteúdo */
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     transition: all 0.3s ease;
@@ -262,7 +262,22 @@ section {
 
 /* Logo e título do site */
 .header-logo {
-    flex-shrink: 0; /* Não encolhe */
+    flex-shrink: 0;
+}
+
+.header-logo-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.85rem;
+    text-decoration: none;
+}
+
+.header-logo-img {
+    display: block;
+    height: 32px;
+    max-width: 160px;
+    width: auto;
+    object-fit: contain;
 }
 
 .logo-text {
@@ -271,6 +286,7 @@ section {
     font-weight: 800;
     margin: 0;
     letter-spacing: 0.5px;
+    white-space: nowrap;
 }
 
 /* Menu de Navegação (desktop) */
@@ -357,18 +373,6 @@ section {
 }
 
 /* Elemento decorativo circular atrás (::before) */
-.hero::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    right: -10%;
-    width: 500px;
-    height: 500px;
-    background-color: var(--verde-claro);
-    border-radius: 50%;
-    z-index: 0;
-    opacity: 0.2;
-}
 
 .hero .container {
     display: grid;
@@ -402,6 +406,107 @@ section {
     height: auto;
     border-radius: 1rem;
     box-shadow: var(--shadow-lg);
+}
+
+/* Logo no espaço da capa do guia */
+/* Logos no espaço da capa do guia */
+.hero-logos {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 2.2rem;
+    background: none;
+    border: none;
+    border-radius: 0;
+    padding: 0;
+    box-shadow: none;
+    backdrop-filter: none;
+}
+
+.hero-logo-img {
+    display: block;
+    height: auto;
+    object-fit: contain;
+}
+
+.hero-logo-mirante {
+    max-width: 330px;
+}
+
+.hero-logo-quebra-cabeca {
+    max-width: 185px;
+}
+
+/* ============================================================================
+   LOGO QUEBRA CABEÇA EM SEÇÕES
+   ============================================================================ */
+
+.section-logo-badge {
+    width: fit-content;
+    max-width: 190px;
+    margin: 0 auto 1.4rem;
+    padding: 0.85rem 1.1rem;
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.section-logo-badge-dark {
+    background-color: var(--amarelo-claro);
+    border: 3px solid var(--roxo-escuro);
+    box-shadow: 7px 7px 0 rgba(64, 27, 71, 0.28);
+}
+
+.section-logo-badge-light {
+    background-color: white;
+    border: 3px solid var(--roxo-escuro);
+    box-shadow: 7px 7px 0 rgba(64, 27, 71, 0.18);
+}
+
+.section-logo-img {
+    display: block;
+    max-width: 135px;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+/* ============================================================================
+   LOGO NO FOOTER
+   ============================================================================ */
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    text-align: center;
+}
+
+.footer-logo-wrap {
+    background-color: var(--amarelo-claro);
+    border: 3px solid var(--roxo-escuro);
+    border-radius: 1rem;
+    padding: 0.85rem 1.1rem;
+    box-shadow: 6px 6px 0 rgba(64, 27, 71, 0.24);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-logo-img {
+    display: block;
+    max-width: 125px;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.footer-text,
+.footer-credit {
+    margin: 0;
 }
 
 /* ============================================================================
@@ -525,17 +630,23 @@ section {
     border-color: #e55555;
 }
 
-.pillar-icon {
-    font-size: 2rem;
+.pillar-mascot-wrap {
+    width: 115px;
+    height: 115px;
     margin-bottom: 1rem;
-    font-weight: 700;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: rgba(255, 255, 255, 0.2);
+    flex-shrink: 0;
+}
+
+.pillar-mascot {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    display: block;
 }
 
 .pillar-title {
@@ -717,157 +828,312 @@ section {
 }
 
 /* ============================================================================
-   9. FEEDBACKS & CAROUSEL SECTION
+   9. DONATIONS SECTION
    ============================================================================ */
 
-.feedbacks {
+.donations {
     background-color: var(--azul-petroleo);
     padding: 6rem 0;
     position: relative;
     overflow: hidden;
-    clip-path: polygon(0 4%, 100% 0, 100% 100%, 0 100%);
+    clip-path: polygon(0 4%, 100% 0, 100% 100%, 0 96%);
     margin-top: -4rem;
 }
 
-.feedbacks::before {
+.donations::before {
     content: "";
     position: absolute;
-    width: 250px;
-    height: 250px;
+    width: 260px;
+    height: 260px;
     border-radius: 50%;
     background-color: var(--rosa-forte);
-    top: -80px;
-    left: -100px;
+    top: -90px;
+    left: -110px;
     z-index: 0;
-    opacity: 0.15;
+    opacity: 0.16;
 }
 
-.feedbacks::after {
+.donations::after {
     content: "";
     position: absolute;
-    width: 200px;
-    height: 200px;
+    width: 220px;
+    height: 220px;
     border-radius: 50%;
     background-color: var(--verde-claro);
-    bottom: -50px;
-    right: -80px;
+    bottom: -70px;
+    right: -90px;
     z-index: 0;
-    opacity: 0.12;
+    opacity: 0.14;
 }
 
-.feedbacks .container {
+.donations .container {
     position: relative;
     z-index: 1;
 }
 
-.feedbacks .section-title {
+.donations-header {
+    max-width: 780px;
+    margin: 0 auto 3rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.donations-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.45rem 0.9rem;
+    border-radius: 999px;
+    background-color: var(--verde-claro);
+    color: var(--roxo-escuro);
+    border: 2px solid var(--roxo-escuro);
+    font-size: 0.78rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 1.25rem;
+}
+
+.donations .section-title {
     color: white;
     margin-bottom: 1rem;
 }
 
-.feedbacks .section-description {
+.donations .section-description {
     color: white;
     text-align: center;
-    margin-bottom: 2rem;
-    max-width: 700px;
-    margin-left: auto;
-    margin-right: auto;
+    max-width: 720px;
+    margin: 0 auto;
 }
 
-.feedbacks-carousel-wrapper {
-    position: relative;
-    width: 100%;
-    max-width: 100%;
-    overflow: hidden;
-    margin-top: 2rem;
-    padding: 1rem;
-    box-sizing: border-box;
+.donations-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
 }
 
-.feedbacks-carousel {
-    display: flex;
-    gap: 24px;
-    cursor: grab;
-    user-select: none;
-    touch-action: pan-y;
-    will-change: transform;
-}
-
-.feedback-card {
-    flex: 0 0 320px;
-    min-height: 260px;
+.donation-card {
+    min-height: 385px;
     background-color: var(--amarelo-claro);
-    padding: 2rem;
-    border-radius: 0.75rem;
-    border: 3px solid var(--rosa-forte);
-    box-shadow: 8px 8px 0 rgba(221, 47, 84, 0.2);
+    color: var(--roxo-escuro);
+    border: 3px solid var(--roxo-escuro);
+    border-radius: 1rem;
+    padding: 1.9rem 1.6rem 1.6rem;
+    text-decoration: none;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    transition: all 0.3s ease;
+    box-shadow: 8px 8px 0 rgba(64, 27, 71, 0.28);
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    position: relative;
+    overflow: hidden;
 }
 
-.feedback-card:nth-child(2n) { border-color: var(--verde-claro); }
-.feedback-card:nth-child(3n) { border-color: var(--coral-claro); }
-
-.feedback-name {
-    font-size: 1.125rem;
-    font-weight: 700;
-    color: var(--roxo-escuro);
-    margin-bottom: 0.25rem;
-}
-
-.feedback-role {
-    font-size: var(--font-size-sm);
-    color: var(--roxo-escuro);
-    font-weight: 600;
-}
-
-.feedback-text {
-    color: var(--roxo-escuro);
-    font-size: var(--font-size-base);
-    line-height: 1.6;
-    font-weight: 500;
-}
-
-.carousel-btn {
+.donation-card::before {
+    content: "";
     position: absolute;
-    top: 50%;
-    z-index: 50;
-    width: 58px;
-    height: 58px;
-    border-radius: 12px;
+    inset: 0;
+    height: 8px;
     background-color: var(--rosa-forte);
-    border: 3px solid var(--roxo-escuro);
-    color: white;
-    font-size: 2.2rem;
-    font-weight: 800;
-    line-height: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    box-shadow: 0 6px 16px rgba(64, 27, 71, 0.35);
-    transition: 0.2s ease;
-    transform: translateY(-50%);
 }
 
-.carousel-btn-prev {
-    left: 1rem;
+.donation-card:hover {
+    transform: translate(-4px, -4px);
+    box-shadow: 12px 12px 0 rgba(64, 27, 71, 0.34);
 }
 
-.carousel-btn-next {
-    right: 1rem;
+.donation-card:focus-visible {
+    outline: 4px solid rgba(255, 255, 197, 0.55);
+    outline-offset: 4px;
 }
 
-.carousel-btn:hover {
-    background-color: var(--roxo-escuro);
-    color: var(--amarelo-claro);
+.donation-card-instagram::before {
+    background-color: var(--rosa-forte);
+}
+
+.donation-card-volunteer::before {
+    background-color: var(--verde-claro);
+}
+
+.donation-card-pix::before {
+    background-color: var(--coral-claro);
+}
+
+.donation-card-instagram:hover {
     border-color: var(--rosa-forte);
 }
 
-.carousel-btn:active {
-    transform: translateY(-50%) scale(0.95);
+.donation-card-volunteer:hover {
+    border-color: var(--verde-claro);
+}
+
+.donation-card-pix:hover {
+    border-color: var(--coral-claro);
+}
+
+
+.donation-card-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    flex-grow: 1;
+    height: 100%;
+}
+
+.donation-card-title {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: var(--roxo-escuro);
+    margin: 0;
+}
+
+.donation-card-text {
+    font-size: var(--font-size-base);
+    line-height: 1.7;
+    color: var(--roxo-escuro);
+    font-weight: 500;
+    margin: 0;
+}
+
+/* Botões internos dos cards de doação */
+.donation-card-button {
+    margin-top: auto;
+    width: 100%;
+    min-height: 52px;
+    padding: 0.85rem 1rem;
+    border-radius: 0.85rem;
+    border: 3px solid var(--roxo-escuro);
+    color: white;
+    text-decoration: none;
+    font-size: 0.92rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    box-shadow: 0 5px 0 rgba(64, 27, 71, 0.28);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+.donation-card-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 16px rgba(64, 27, 71, 0.28);
+}
+
+.donation-card-button:active {
+    transform: translateY(2px);
+    box-shadow: 0 3px 0 rgba(64, 27, 71, 0.28);
+}
+
+.donation-card-button-arrow {
+    width: 30px;
+    height: 30px;
+    border-radius: 999px;
+    background-color: rgba(255, 255, 255, 0.24);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    line-height: 1;
+    flex-shrink: 0;
+}
+
+.donation-card-button-instagram {
+    background-color: var(--rosa-forte);
+}
+
+.donation-card-button-instagram:hover {
+    background-color: var(--roxo-escuro);
+}
+
+.donation-card-button-volunteer {
+    background-color: var(--azul-petroleo);
+}
+
+.donation-card-button-volunteer:hover {
+    background-color: var(--roxo-escuro);
+}
+
+.donation-card-button-pix {
+    background-color: var(--coral-claro);
+}
+
+.donation-card-button-pix:hover {
+    background-color: var(--roxo-escuro);
+}
+
+.pix-box {
+    background-color: white;
+    border: 2px solid var(--roxo-escuro);
+    border-radius: 0.85rem;
+    padding: 0.75rem 0.9rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+.donation-card-note {
+    font-size: 0.84rem;
+    line-height: 1.4;
+    color: var(--text-light);
+    font-weight: 600;
+    margin: 0;
+}
+
+.pix-label {
+    font-size: 0.75rem;
+    font-weight: 800;
+    color: var(--text-light);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.pix-key {
+    font-size: 0.98rem;
+    color: var(--roxo-escuro);
+    overflow-wrap: anywhere;
+    word-break: break-word;
+}
+
+.donation-card-note {
+    font-size: 0.88rem;
+    line-height: 1.5;
+    color: var(--text-light);
+    font-weight: 600;
+    margin: 0;
+}
+
+.donations-footer {
+    margin: 2.25rem auto 0;
+    max-width: 760px;
+    padding: 0;
+    text-align: center;
+    color: white;
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.donations-footer-text {
+    font-size: var(--font-size-lg);
+    line-height: 1.8;
+    font-weight: 500;
+    margin: 0 0 1.75rem;
+    color: white;
+}
+
+.donations-actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
 }
 
 /* ============================================================================
@@ -893,20 +1159,20 @@ section {
     top: -70px;
     right: -70px;
     z-index: 0;
-    opacity: 0.3;
+    opacity: 0.22;
 }
 
 .contact::after {
     content: "";
     position: absolute;
-    width: 160px;
-    height: 160px;
+    width: 180px;
+    height: 180px;
     border-radius: 50%;
-    background-color: var(--coral-claro);
-    bottom: -80px;
-    left: -80px;
+    background-color: var(--azul-petroleo);
+    bottom: -90px;
+    left: -90px;
     z-index: 0;
-    opacity: 0.25;
+    opacity: 0.16;
 }
 
 .contact .container {
@@ -914,24 +1180,42 @@ section {
     z-index: 1;
 }
 
-.contact .section-title {
-    color: var(--roxo-escuro);
-    margin-bottom: 1.5rem;
-    text-align: center;
-}
-
+/* Layout geral da seção */
 .contact-wrapper {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    align-items: start;
-}
-
-.contact-content {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 3rem;
+}
+
+/* Cabeçalho da seção */
+.contact-content {
+    max-width: 760px;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
     align-items: center;
+    gap: 1.25rem;
+}
+
+.contact-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.45rem 0.9rem;
+    border-radius: 999px;
+    background-color: rgba(221, 47, 84, 0.12);
+    color: var(--rosa-forte);
+    border: 2px solid var(--rosa-forte);
+    font-size: 0.78rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.contact .section-title {
+    color: var(--roxo-escuro);
+    margin-bottom: 0;
     text-align: center;
 }
 
@@ -940,95 +1224,244 @@ section {
     color: var(--roxo-escuro);
     line-height: 1.8;
     font-weight: 500;
-}
-
-.contact-methods {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1.5rem;
-}
-
-.contact-card {
-    padding: 1.25rem;
-    border-radius: 0.75rem;
-    border: 3px solid;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.75rem;
-    box-shadow: 6px 6px 0 rgba(64, 27, 71, 0.2);
-    transition: all 0.3s ease;
-}
-
-.contact-card:hover {
-    transform: translate(-2px, -2px);
-    box-shadow: 8px 8px 0 rgba(64, 27, 71, 0.3);
-}
-
-.contact-card-email {
-    background-color: var(--rosa-forte);
-    border-color: var(--roxo-escuro);
-    color: white;
-}
-
-.contact-card-whatsapp {
-    background-color: var(--verde-claro);
-    border-color: var(--roxo-escuro);
-    color: var(--roxo-escuro);
-}
-
-.contact-card-instagram {
-    background-color: var(--coral-claro);
-    border-color: var(--roxo-escuro);
-    color: white;
-}
-
-.contact-card-linkedin {
-    background-color: var(--azul-petroleo);
-    border-color: var(--roxo-escuro);
-    color: white;
-}
-
-.contact-card-title {
-    font-size: 1.1rem;
-    font-weight: 700;
-    margin: 0;
-    letter-spacing: 0.3px;
-}
-
-.contact-card-text {
-    font-size: var(--font-size-base);
-    font-weight: 600;
+    max-width: 680px;
     margin: 0;
 }
 
-.contact-card-icon {
-    font-size: 1.75rem;
-    margin-bottom: 0.5rem;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.2);
-}
-
+/* Botão principal da seção */
 .contact .btn-contact {
-    padding: 0.9rem 2.25rem;
+    background-color: var(--rosa-forte);
+    color: white;
+    border: 3px solid var(--roxo-escuro);
+    box-shadow: 0 6px 0 rgba(64, 27, 71, 0.28);
+    padding: 0.95rem 2.4rem;
     font-size: 0.95rem;
-    background-color: var(--verde-claro);
-    color: var(--roxo-escuro);
-    border: none;
-    align-self: center;
-    font-weight: 600;
-    transition: all 0.3s ease;
+    font-weight: 800;
+    text-transform: uppercase;
+    text-decoration: none;
 }
 
 .contact .btn-contact:hover {
-    background-color: #79c71c;
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-md);
+    background-color: var(--roxo-escuro);
+    border-color: var(--rosa-forte);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(64, 27, 71, 0.25);
+}
+
+/* Grid com os três canais */
+.contact-methods {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+/* Card base */
+.contact-card {
+    min-height: 245px;
+    background-color: var(--bg-white);
+    color: var(--roxo-escuro);
+    border: 3px solid var(--roxo-escuro);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    box-shadow: 8px 8px 0 rgba(64, 27, 71, 0.18);
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.contact-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    height: 7px;
+    background-color: var(--rosa-forte);
+}
+
+.contact-card:hover {
+    transform: translate(-4px, -4px);
+    box-shadow: 12px 12px 0 rgba(64, 27, 71, 0.24);
+}
+
+.contact-card:focus-visible {
+    outline: 4px solid rgba(25, 143, 175, 0.35);
+    outline-offset: 4px;
+}
+
+/* Variações dos cards */
+.contact-card-instagram::before {
+    background-color: var(--rosa-forte);
+}
+
+.contact-card-personal-email::before {
+    background-color: var(--azul-petroleo);
+}
+
+.contact-card-ong-email::before {
+    background-color: var(--verde-claro);
+}
+
+.contact-card-instagram:hover {
+    border-color: var(--rosa-forte);
+}
+
+.contact-card-personal-email:hover {
+    border-color: var(--azul-petroleo);
+}
+
+.contact-card-ong-email:hover {
+    border-color: var(--verde-claro);
+}
+
+/* Ícones dos cards */
+.contact-card-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 1rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--amarelo-claro);
+    color: var(--roxo-escuro);
+    border: 2px solid var(--roxo-escuro);
+    font-size: 1.6rem;
+    font-weight: 800;
+    flex-shrink: 0;
+}
+
+.contact-card-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+}
+
+.contact-card-title {
+    font-size: 1.18rem;
+    font-weight: 800;
+    margin: 0;
+    color: var(--roxo-escuro);
+}
+
+.contact-card-text {
+    font-size: 1rem;
+    font-weight: 800;
+    color: var(--roxo-escuro);
+    margin: 0;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+}
+
+.contact-card-description {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--text-light);
+    font-weight: 500;
+    margin: 0;
+}
+
+/* ============================================================================
+   CONTACT RESPONSIVE
+   ============================================================================ */
+
+@media (max-width: 768px) {
+    .contact {
+        padding: 4rem 0;
+    }
+
+    .contact-wrapper {
+        gap: 2.5rem;
+    }
+
+    .contact-content {
+        max-width: 100%;
+    }
+
+    .contact-description {
+        font-size: var(--font-size-base);
+    }
+
+    .contact-methods {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+    }
+
+    .contact-card {
+        min-height: auto;
+        padding: 1.4rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-logos {
+        flex-direction: row;
+        gap: 1rem;
+        padding: 0;
+        border-radius: 0;
+        background: none;
+        border: none;
+        box-shadow: none;
+    }
+
+    .hero-logo-mirante {
+        max-width: 58%;
+    }
+
+    .hero-logo-quebra-cabeca {
+        max-width: 32%;
+    }
+
+    .contact {
+        padding: 3.5rem 0;
+    }
+
+    .contact::before {
+        width: 90px;
+        height: 90px;
+        right: -45px;
+        top: -45px;
+    }
+
+    .contact::after {
+        width: 110px;
+        height: 110px;
+        left: -55px;
+        bottom: -55px;
+    }
+
+    .contact-eyebrow {
+        font-size: 0.7rem;
+        padding: 0.4rem 0.75rem;
+    }
+
+    .contact .btn-contact {
+        width: 100%;
+        text-align: center;
+        padding: 0.9rem 1.25rem;
+    }
+
+    .contact-card {
+        padding: 1.25rem;
+        border-radius: 0.85rem;
+        box-shadow: 6px 6px 0 rgba(64, 27, 71, 0.16);
+    }
+
+    .contact-card:hover {
+        transform: translate(-2px, -2px);
+        box-shadow: 8px 8px 0 rgba(64, 27, 71, 0.22);
+    }
+
+    .contact-card-icon {
+        width: 48px;
+        height: 48px;
+        font-size: 1.4rem;
+    }
+
+    .contact-card-text {
+        font-size: 0.92rem;
+    }
 }
 
 /* ============================================================================
@@ -1118,8 +1551,13 @@ section {
         gap: 1.5rem;
     }
 
+    .header-logo-img {
+        height: 28px;
+        max-width: 130px;
+    }
+
     .logo-text {
-        font-size: 1.25rem;
+        font-size: 1.05rem;
     }
 
     .header-nav {
@@ -1185,14 +1623,14 @@ section {
         right: -40px;
     }
 
-    .feedbacks::before {
+    .donations::before {
         width: 180px;
         height: 180px;
         left: -70px;
         opacity: 0.1;
     }
 
-    .feedbacks::after {
+    .donations::after {
         width: 150px;
         height: 150px;
         right: -60px;
@@ -1215,27 +1653,50 @@ section {
         opacity: 0.15;
     }
 
-    /* Carousel */
-    .feedbacks-carousel-wrapper {
-        padding: 1rem;
+    /* Donations */
+    .donations {
+        padding: 4rem 0;
     }
 
-    .feedback-card {
-        flex: 0 0 75vw;
+    .donations::before {
+        width: 180px;
+        height: 180px;
+        left: -70px;
+        opacity: 0.1;
     }
 
-    .carousel-btn {
-        width: 46px;
-        height: 46px;
-        font-size: 1.6rem;
+    .donations::after {
+        width: 150px;
+        height: 150px;
+        right: -60px;
+        opacity: 0.08;
     }
 
-    .carousel-btn-prev {
-        left: 0.75rem;
+    .donations-grid {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
     }
 
-    .carousel-btn-next {
-        right: 0.75rem;
+    .donation-card {
+        min-height: auto;
+        padding: 1.4rem;
+    }
+
+    .donation-card-button {
+        margin-top: 1rem;
+    }
+
+    .donations-footer {
+        padding: 1.5rem;
+    }
+
+    .donations-actions {
+        flex-direction: column;
+    }
+
+    .donations-actions .btn {
+        width: 100%;
+        text-align: center;
     }
 
     /* Contact */
@@ -1347,11 +1808,9 @@ section {
         padding: 1rem;
     }
 
-    .pillar-icon {
-        font-size: 1.5rem;
-        width: 45px;
-        height: 45px;
-        margin-bottom: 0.75rem;
+    .pillar-mascot-wrap {
+        width: 85px;
+        height: 85px;
     }
 
     .pillar-title {
@@ -1405,11 +1864,11 @@ section {
         opacity: 0.2;
     }
 
-    .feedbacks::before {
+    .donations::before {
         display: none;
     }
 
-    .feedbacks::after {
+    .donations::after {
         display: none;
     }
 
@@ -1461,41 +1920,6 @@ section {
     .card-description {
         font-size: var(--font-size-sm);
         line-height: 1.5;
-    }
-
-    /* Carousel */
-    .feedbacks-carousel-wrapper {
-        width: 100%;
-        max-width: 100%;
-        overflow: hidden;
-        padding: 1rem 2rem;
-        box-sizing: border-box;
-    }
-
-    .feedbacks-carousel {
-        display: flex;
-        max-width: none;
-    }
-
-    .feedback-card {
-        flex: 0 0 calc(100% - 4rem);
-        max-width: calc(100% - 4rem);
-        min-height: 220px;
-        padding: 1.5rem;
-    }
-
-    .carousel-btn {
-        width: 40px;
-        height: 40px;
-        font-size: 1.35rem;
-    }
-
-    .carousel-btn-prev {
-        left: 0.5rem;
-    }
-
-    .carousel-btn-next {
-        right: 0.5rem;
     }
 
     /* Contact */
