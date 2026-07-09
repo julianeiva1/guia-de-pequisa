@@ -88,6 +88,8 @@
 
 .scroll-top-btn:hover {
     background-color: var(--azul-petroleo);
+    transform: translateY(-4px) scale(1.03);
+    box-shadow: 0 10px 0 rgba(64, 27, 71, 0.35);
 }
 
 .scroll-top-btn:active {
@@ -1642,6 +1644,7 @@ section {
     background-color: white;
     color: var(--roxo-escuro);
     transform: translateY(-3px);
+    box-shadow: 0 6px 0 rgba(64, 27, 71, 0.12);
 }
 
 .footer-social-link:active {
